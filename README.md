@@ -19,14 +19,23 @@ Task Analyzer is a modern task management application built with ASP.NET Core MV
 
 ## Screenshots
 
-Add screenshots of your project here:
+### User Interface
+![Home Page](assets/home.png)
+![Task Analyzer](assets/taskanalyzer.png)
 
-![Home Page](assets/home_page%20-%20Copy.jpg)
-![Trending Page](assets/trending_page%20jpg)
-![Notices Page](assets/notices_page%20-%20Copy.jpg)
-![Profile Page](assets/profile%20-%20Copy.jpg)
-![Admin Dashboard](assets/admin_dashboard.jpg)
-![Admin Route](assets/admin_route.jpg)
+### Authentication
+![Login Page](assets/login.png)
+![Register Page](assets/register.png)
+
+### Task Management
+![Create Task](assets/createtask.png)
+
+### Administration
+![Admin Panel](assets/adminpanel.png)
+![Edit User](assets/edituserfromadminpanel.png)
+
+### Additional
+![Privacy Policy](assets/privacypolicy.png)
 
 ---
 
@@ -41,6 +50,16 @@ Task_Analyzer/
 ├── Task_Analyzer.sln
 ├── Program.cs
 ├── README.md
+├── TestConnection.cs
+├── assets/
+│   ├── adminpanel.png
+│   ├── createtask.png
+│   ├── edituserfromadminpanel.png
+│   ├── home.png
+│   ├── login.png
+│   ├── privacypolicy.png
+│   ├── register.png
+│   └── taskanalyzer.png
 ├── Controllers/
 │   ├── AccountController.cs
 │   ├── AdminController.cs
@@ -50,10 +69,17 @@ Task_Analyzer/
 │   ├── ApplicationDbContext.cs
 │   └── DesignTimeDbContextFactory.cs
 ├── Migrations/
+│   ├── 20250516182359_InitialSetup.cs
+│   ├── 20250516182359_InitialSetup.Designer.cs
+│   ├── 20250516185830_AddRegistrationDateToUser.cs
+│   ├── 20250516185830_AddRegistrationDateToUser.Designer.cs
+│   └── ApplicationDbContextModelSnapshot.cs
 ├── Models/
 │   ├── ApplicationUser.cs
 │   ├── ErrorViewModel.cs
 │   └── TodoTask.cs
+├── Properties/
+│   └── launchSettings.json
 ├── Services/
 │   └── DbInitializer.cs
 ├── ViewModels/
@@ -61,14 +87,36 @@ Task_Analyzer/
 │   └── RegisterViewModel.cs
 ├── Views/
 │   ├── Account/
+│   │   ├── Lockout.cshtml
+│   │   ├── Login.cshtml
+│   │   └── Register.cshtml
 │   ├── Admin/
+│   │   ├── DeleteTask.cshtml
+│   │   ├── EditTask.cshtml
+│   │   ├── Index.cshtml
+│   │   └── UserTasks.cshtml
 │   ├── Home/
+│   │   ├── Index.cshtml
+│   │   └── Privacy.cshtml
 │   ├── Shared/
-│   └── Task/
+│   │   ├── Error.cshtml
+│   │   ├── _Layout.cshtml
+│   │   ├── _Layout.cshtml.css
+│   │   └── _ValidationScriptsPartial.cshtml
+│   ├── Task/
+│   │   ├── Create.cshtml
+│   │   ├── Delete.cshtml
+│   │   ├── Details.cshtml
+│   │   ├── Edit.cshtml
+│   │   └── Index.cshtml
+│   ├── _ViewImports.cshtml
+│   └── _ViewStart.cshtml
 └── wwwroot/
     ├── css/
     ├── images/
-    └── js/
+    ├── js/
+    ├── lib/
+    └── favicon.ico
 ```
 
 ---
@@ -85,7 +133,7 @@ Task_Analyzer/
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/yourusername/Task_Analyzer.git
+   git clone https://github.com/Maksudur20/Task_Analyzer.git
    cd Task_Analyzer
    ```
 
@@ -145,7 +193,7 @@ This project is licensed under the MIT License.
 
 ## Contact
 
-For questions or support, open an issue or contact the maintainer at [20maksudur00@gmail.com].
+For questions or support, open an issue or contact the maintainer at [20maksudur00@gmail.com](mailto:20maksudur00@gmail.com).
 
 ---
 
