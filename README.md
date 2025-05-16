@@ -20,104 +20,103 @@ Task Analyzer is a modern task management application built with ASP.NET Core MV
 ## Screenshots
 
 ### User Interface
-![Home Page](assets/home.png)
-![Task Analyzer](assets/taskanalyzer.png)
+| Home Page | Main Dashboard |
+|:---:|:---:|
+| ![Home Page](assets/home.png) | ![Task Analyzer](assets/taskanalyzer.png) |
+| *Landing page with welcome message* | *Main task management interface* |
 
 ### Authentication
-![Login Page](assets/login.png)
-![Register Page](assets/register.png)
+| Login | Registration |
+|:---:|:---:|
+| ![Login Page](assets/login.png) | ![Register Page](assets/register.png) |
+| *Secure user authentication* | *New user registration form* |
 
 ### Task Management
 ![Create Task](assets/createtask.png)
+*Intuitive task creation with priority levels and due dates*
 
 ### Administration
-![Admin Panel](assets/adminpanel.png)
-![Edit User](assets/edituserfromadminpanel.png)
+| Admin Dashboard | User Management |
+|:---:|:---:|
+| ![Admin Panel](assets/adminpanel.png) | ![Edit User](assets/edituserfromadminpanel.png) |
+| *Comprehensive admin control panel* | *User profile editing capabilities* |
 
 ### Additional
 ![Privacy Policy](assets/privacypolicy.png)
+*GDPR-compliant privacy policy page*
+
+### Database Structure
+![Entity Relationship Diagram](assets/erdiagram.png)
+*Entity-relationship diagram showing database schema*
 
 ---
 
 ## Project Structure
 
+Task Analyzer follows the standard ASP.NET Core MVC architecture, organized into the following key components:
+
 ```
 Task_Analyzer/
-├── appsettings.Development.json
-├── appsettings.json
-├── LICENSE.txt
-├── Task_Analyzer.csproj
-├── Task_Analyzer.sln
-├── Program.cs
-├── README.md
-├── TestConnection.cs
-├── assets/
-│   ├── adminpanel.png
-│   ├── createtask.png
-│   ├── edituserfromadminpanel.png
-│   ├── home.png
-│   ├── login.png
-│   ├── privacypolicy.png
-│   ├── register.png
-│   └── taskanalyzer.png
-├── Controllers/
-│   ├── AccountController.cs
-│   ├── AdminController.cs
-│   ├── HomeController.cs
-│   └── TaskController.cs
-├── Data/
-│   ├── ApplicationDbContext.cs
-│   └── DesignTimeDbContextFactory.cs
-├── Migrations/
-│   ├── 20250516182359_InitialSetup.cs
-│   ├── 20250516182359_InitialSetup.Designer.cs
-│   ├── 20250516185830_AddRegistrationDateToUser.cs
-│   ├── 20250516185830_AddRegistrationDateToUser.Designer.cs
-│   └── ApplicationDbContextModelSnapshot.cs
-├── Models/
-│   ├── ApplicationUser.cs
-│   ├── ErrorViewModel.cs
-│   └── TodoTask.cs
-├── Properties/
-│   └── launchSettings.json
-├── Services/
-│   └── DbInitializer.cs
-├── ViewModels/
-│   ├── LoginViewModel.cs
-│   └── RegisterViewModel.cs
-├── Views/
-│   ├── Account/
-│   │   ├── Lockout.cshtml
-│   │   ├── Login.cshtml
-│   │   └── Register.cshtml
-│   ├── Admin/
-│   │   ├── DeleteTask.cshtml
-│   │   ├── EditTask.cshtml
-│   │   ├── Index.cshtml
-│   │   └── UserTasks.cshtml
-│   ├── Home/
-│   │   ├── Index.cshtml
-│   │   └── Privacy.cshtml
-│   ├── Shared/
-│   │   ├── Error.cshtml
-│   │   ├── _Layout.cshtml
-│   │   ├── _Layout.cshtml.css
-│   │   └── _ValidationScriptsPartial.cshtml
-│   ├── Task/
-│   │   ├── Create.cshtml
-│   │   ├── Delete.cshtml
-│   │   ├── Details.cshtml
-│   │   ├── Edit.cshtml
-│   │   └── Index.cshtml
-│   ├── _ViewImports.cshtml
-│   └── _ViewStart.cshtml
-└── wwwroot/
-    ├── css/
-    ├── images/
-    ├── js/
-    ├── lib/
-    └── favicon.ico
+├── appsettings.json                  # Application configuration
+├── Program.cs                        # Application entry point
+├── Task_Analyzer.csproj              # Project file
+├── assets/                           # README documentation images
+│   ├── adminpanel.png               # Admin panel screenshot
+│   ├── createtask.png               # Task creation form
+│   ├── edituserfromadminpanel.png   # User editing interface
+│   ├── erdiagram.png                # Database entity relation diagram
+│   ├── home.png                     # Home page
+│   ├── login.png                    # Login page
+│   ├── privacypolicy.png            # Privacy policy page
+│   ├── register.png                 # Registration page
+│   └── taskanalyzer.png             # Main dashboard
+├── Controllers/                      # MVC Controllers
+│   ├── AccountController.cs          # User authentication
+│   ├── AdminController.cs            # Admin functionality
+│   ├── HomeController.cs             # Landing pages
+│   └── TaskController.cs             # Task management
+├── Data/                             # Database layer
+│   ├── ApplicationDbContext.cs       # Entity Framework context
+│   └── DesignTimeDbContextFactory.cs # Design-time DB context factory
+├── Migrations/                       # Database migrations
+├── Models/                           # Domain models
+│   ├── ApplicationUser.cs            # Extended Identity user
+│   ├── ErrorViewModel.cs             # Error handling
+│   └── TodoTask.cs                   # Core task entity
+├── Services/                         # Business logic services
+│   └── DbInitializer.cs              # Database seeding
+├── ViewModels/                       # View-specific models
+│   ├── LoginViewModel.cs             # Login form model
+│   └── RegisterViewModel.cs          # Registration form model
+├── Views/                            # Razor views
+│   ├── Account/                      # Authentication views
+│   ├── Admin/                        # Admin panel views
+│   ├── Home/                         # Landing page views
+│   ├── Shared/                       # Layout templates
+│   └── Task/                         # Task management views
+└── wwwroot/                          # Static assets
+    ├── css/                          # Stylesheets
+    ├── js/                           # JavaScript files
+    └── lib/                          # Frontend libraries
 ```
+
+### Key Components:
+
+- **Controllers**: Handle HTTP requests and user interactions
+- **Models**: Define the application's data structures
+- **Views**: Render the UI components and templates
+- **Data**: Manages database connections and migrations
+- **Services**: Contains business logic and application services
+- **ViewModels**: Tailors data specifically for view consumption
+
+---
+
+## Database Design
+
+The application uses Entity Framework Core with a SQL Server database. The following entity-relationship diagram illustrates the database schema and relationships between entities:
+
+![Entity Relationship Diagram](assets/erdiagram.png)
+*Database schema showing the relationships between User and Task entities*
 
 ---
 
