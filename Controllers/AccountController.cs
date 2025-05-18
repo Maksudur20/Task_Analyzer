@@ -85,6 +85,27 @@ namespace Task_Analyzer.Controllers
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
+                    
+                    // Get the user to check roles
+                    var user = await _userManager.FindByEmailAsync(model.Email);
+                    if (user != null)
+                    {
+                        // Check if the user is in the Admin role
+                        var isAdmin = await _userManager.IsInRoleAsync(user, "Admin");
+                        
+                        if (isAdmin)
+                        {
+                            // Redirect admin to admin dashboard
+                            return RedirectToAction("Index", "Admin");
+                        }
+                        else 
+                        {
+                            // Redirect regular users to their tasks
+                            return RedirectToAction("Index", "Task");
+                        }
+                    }
+                    
+                    // Fallback to the default redirect if we couldn't determine the role
                     return RedirectToLocal(returnUrl);
                 }
                 if (result.IsLockedOut)
