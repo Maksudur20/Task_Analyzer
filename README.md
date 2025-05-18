@@ -1,19 +1,38 @@
 # Task Analyzer
 
+<div align="center">
+
+![Task Analyzer](assets/taskanalyzer.png)
+
+</div>
+
 Task Analyzer is a modern task management application built with ASP.NET Core MVC. It allows users to create, track, and manage their daily tasks with customizable priority levels and due dates. Authenticated users can create their own tasks, view their task history, and mark tasks as complete. The project features a clean, responsive UI, user authentication, role-based admin panel, and comprehensive task management capabilities.
 
 ---
 
 ## Features
 
-- Create, edit, and manage personal tasks with customizable priorities (1-5)
-- Set due dates for effective time management
-- User registration, login, and profile management
-- Authenticated users can create, edit, and delete their own tasks
-- "My Tasks" section for users to view and manage their tasks
-- Mark tasks as complete to track progress
-- Admin panel for managing users and all tasks in the system
-- Responsive Bootstrap UI for desktop and mobile devices
+- **Task Management**
+  - Create, edit, and manage personal tasks with customizable priorities (1-5)
+  - Set due dates for effective time management
+  - Mark tasks as complete to track progress
+  - Filter tasks by completion status
+
+- **User Management**
+  - User registration, login, and profile management
+  - Authenticated users can create, edit, and delete their own tasks
+  - "My Tasks" section for users to view and manage their tasks
+
+- **Administration**
+  - Admin panel for managing all users and tasks in the system
+  - User management capabilities (edit, delete)
+  - System-wide task oversight
+
+- **Technical**
+  - Built on ASP.NET Core MVC architecture
+  - Entity Framework Core with SQL Server
+  - Responsive Bootstrap UI for desktop and mobile devices
+  - GDPR-compliant privacy policy
 
 ---
 
@@ -115,8 +134,18 @@ Task_Analyzer/
 
 The application uses Entity Framework Core with a SQL Server database. The following entity-relationship diagram illustrates the database schema and relationships between entities:
 
+<div align="center">
+
 ![Entity Relationship Diagram](assets/erdiagram.png)
+
+</div>
+
 *Database schema showing the relationships between User and Task entities*
+
+### Key Entities:
+
+- **ApplicationUser**: Extended Identity user model with custom properties
+- **TodoTask**: Core task entity with properties including title, description, priority, due date, and completion status
 
 ---
 
@@ -125,7 +154,8 @@ The application uses Entity Framework Core with a SQL Server database. The follo
 ### Prerequisites
 
 - [.NET 8.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
-- SQL Server (or change connection string for your DB)
+- SQL Server (LocalDB, Express, or standard edition)
+- Visual Studio 2022 (recommended) or Visual Studio Code
 
 ### Installation
 
@@ -169,18 +199,41 @@ The application uses Entity Framework Core with a SQL Server database. The follo
 
 ## Usage
 
+### Regular Users
+
 - Register a new account or log in with your credentials
-- Create new tasks with a title, description, priority level, and due date
-- View your tasks and filter by completion status
+- Create new tasks with a title, description, priority level (1-5), and due date
+- View your tasks in the "My Tasks" section
+- Filter tasks by completion status
 - Edit existing tasks or mark them as complete
 - Delete tasks you no longer need
-- Admins can access the admin panel to manage all users' tasks
+
+### Administrators
+
+- Log in with admin credentials:
+  - Email: `admin@taskanalyzer.com`
+  - Password: `Admin@123`
+- Access the admin panel to manage all users and tasks in the system
+- Edit or delete user accounts
+- View, edit, and delete any task in the system
+
+### Demo
+
+A live demo of the application is available at: [https://taskanalyzer.azurewebsites.net](https://taskanalyzer.azurewebsites.net) (sample link)
 
 ---
 
 ## Contributing
 
-Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+Contributions are welcome! Here's how you can contribute:
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+For major changes, please open an issue first to discuss what you would like to change.
 
 ---
 
@@ -198,5 +251,9 @@ For questions or support, open an issue or contact the maintainer at [20maksudur
 
 ## Credits
 
-- Built with ASP.NET Core MVC
-- UI powered by Bootstrap
+- Built with [ASP.NET Core MVC](https://docs.microsoft.com/en-us/aspnet/core/mvc/overview)
+- UI powered by [Bootstrap 5](https://getbootstrap.com/)
+- Icons from [Font Awesome](https://fontawesome.com/)
+- Entity Framework Core for data access
+- Identity Framework for authentication
+- Developed by [Maksudur Rahman](https://github.com/Maksudur20)
